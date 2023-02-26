@@ -1,0 +1,40 @@
+.logo {
+  margin: 0;
+  padding-top: 6px;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.aside__logo {
+  position: absolute;
+  left: 0;
+
+  @media screen and (min-width: 640px) {
+    padding-left: 30px;
+  }
+}
+
+.header__logo {
+  position: absolute;
+  top: 15px;
+  left: 0;
+
+  @media screen and (min-width: 640px) {
+    display: none;
+  }
+}
+
+.logo__link {
+  color: #ffffff;
+}
+
+.logo__link--heart {
+  font-size: 15px;
+  color: $button-color;
+  ;
+}
+
+.logo:hover .logo__link--heart {
+  color: #ffffff;
+}

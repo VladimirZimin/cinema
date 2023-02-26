@@ -1,0 +1,43 @@
+.form {
+  position: relative;
+  display: flex;
+  margin-left: 35px;
+  width: 100%;
+  max-width: 450px;
+  min-width: 180px;
+  height: 28px;
+
+  @media screen and (min-width: 640px) {
+    margin-left: 0;
+  }
+}
+
+.form__input {
+  width: 100%;
+  background-color: $button-bg;
+  font-family: $font-color;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0 10px;
+  padding-right: 31px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 0 0 2px #868ca005;
+}
+
+.form__button {
+  position: absolute;
+  top: 3px;
+  right: 1px;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+
+  &--icon {
+
+    font-size: 20px;
+    color: $font-color;
+    opacity: 0.6;
+  }
+}

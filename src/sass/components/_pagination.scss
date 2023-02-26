@@ -1,0 +1,21 @@
+.tui-pagination {
+  display: flex;
+  gap: 10px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  background-color: $theme-bg;
+  color: $font-color;
+
+  & a:hover {
+    color: #ffffff;
+  }
+}
+
+.tui-page-btn {
+
+  color: $font-color;
+}
+
+.tui-is-selected {
+  color: #ffffff;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page title</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./sass/main.scss" />
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <include src="./partials/aside.html"></include>
+
+    <section class="main-section">
+      <include src="./partials/header.html"></include>
+      <include src="./partials/movie-cards.html"></include>
+      <include src="./partials/pagination.html"></include>
+      <include src="./partials/footer.html"></include>
+    </section>
+
+
+  </div>
+
+  <include src="./partials/modal-info.html"></include>
+  <include src="./partials/singin-form.html"></include>
+
+  <script type="module" src="./index.js"></script>
+</body>
+
+</html>
