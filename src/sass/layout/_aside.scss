@@ -15,7 +15,7 @@
 
 
   transition-property: transform;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(.22, 1, .36, 1);
 
   @media screen and (min-width: 640px) {
@@ -45,7 +45,7 @@
   }
 
   &__item {
-    padding: 0 15px 15px 0;
+
 
     .material-icons {
       display: none;
@@ -53,6 +53,9 @@
   }
 
   &__link {
+    display: block;
+    width: 130px;
+    padding: 10px 15px 10px 0;
     color: $font-color;
 
     &:hover {
@@ -62,7 +65,7 @@
 }
 
 .is-hidden {
-  transform: translate(99999px);
+  transform: translate(-99999px);
 
   @media screen and (min-width: 640px) {
     transform: translate(0)
@@ -81,7 +84,7 @@
   position: relative;
   color: #ffffff;
   font-weight: 600;
-  transform: translateX(-15px);
+  transform: translateX(-5px);
 
   & .material-icons {
     display: block;
@@ -92,11 +95,52 @@
   }
 }
 
+.sign-in__item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: -45px;
+    width: 150px;
+    height: 2px;
+    background-color: $border-color;
+
+    @media screen and (min-width: 640px) {
+      position: relative;
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .theme__item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: -20px;
+      width: 130px;
+      height: 2px;
+      background-color: $border-color;
+
+
+    }
+  }
+}
+
 .aside-menu {
 
   &__list {
     margin-top: 50%;
-    border-bottom: inset 2px $border-color;
   }
 }
 

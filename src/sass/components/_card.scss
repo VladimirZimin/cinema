@@ -8,12 +8,16 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 900px) {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media screen and (min-width: 1360px) {
+  @media screen and (min-width: 1150px) {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (min-width: 1400px) {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
@@ -54,15 +58,15 @@
 }
 
 .movie__rating--great {
-  border: 1px solid rgb(28, 224, 80);
+  border: 2px solid rgb(28, 162, 64);
 }
 
 .movie__rating--good {
-  border: 1px solid rgb(188, 209, 34);
+  border: 2px solid rgb(231, 255, 54);
 }
 
-.movie__rating--bed {
-  border: 1px solid rgb(224, 39, 39);
+.movie__rating--bad {
+  border: 2px solid rgb(224, 39, 39);
 }
 
 .movie__description {

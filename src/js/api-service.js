@@ -56,4 +56,29 @@ export default class MovieApiService {
 
     return response.data.genres;
   };
+
+  fetchMoviesForGenres = async id => {
+    try {
+      const responce = await axios.get(
+        `${this.BASE_URL}/discover/movie?with_genres=${id}&page=${this.page}&api_key=${this.API_KEY}`,
+        // &with_original_language=en
+      );
+
+      return responce.data.results;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  fetchSearchMovie = async () => {
+    try {
+      const responce = await axios.get(
+        `${this.BASE_URL}/search/movie?query=${this._searchQuery}&page=${this.page}&api_key=${this.API_KEY}`,
+      );
+
+      return responce.data.results;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 }

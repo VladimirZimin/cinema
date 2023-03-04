@@ -3,6 +3,7 @@ import getActiveLink from './asideNavigation';
 import createPagination from './pagination';
 import getRefs from './get-refs';
 import renderMovieCards from './renderMovieCards';
+import getMovieRaitingColor from './raitingColor';
 
 const refs = getRefs();
 const categoryMovie = new MovieApiService();
@@ -18,8 +19,9 @@ function getTopWeekMarkup() {
   refs.movieCardTitle.textContent = 'Топ недели';
   createPagination();
   categoryMovie.fetchTrendWeekMovie().then(data => {
-    categoryMovie
-      .fetchGenreMovie()
-      .then(genres => renderMovieCards(data, genres));
+    categoryMovie.fetchGenreMovie().then(genres => {
+      renderMovieCards(data, genres);
+      getMovieRaitingColor();
+    });
   });
 }

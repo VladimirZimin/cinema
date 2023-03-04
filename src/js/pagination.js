@@ -2,6 +2,7 @@ import Pagination from 'tui-pagination';
 import MovieApiService from './api-service';
 import renderMovieCards from './renderMovieCards';
 import getRefs from './get-refs';
+import getMovieRaitingColor from './raitingColor';
 
 const refs = getRefs();
 const categoryMovie = new MovieApiService();
@@ -22,9 +23,10 @@ export default function createPagination() {
     console.log('hi');
 
     categoryMovie.fetchTrendDayMovie().then(data => {
-      categoryMovie
-        .fetchGenreMovie()
-        .then(genres => renderMovieCards(data, genres));
+      categoryMovie.fetchGenreMovie().then(genres => {
+        renderMovieCards(data, genres);
+        getMovieRaitingColor();
+      });
     });
   });
 }

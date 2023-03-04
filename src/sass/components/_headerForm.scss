@@ -33,11 +33,17 @@
   background-color: transparent;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 
   &--icon {
 
     font-size: 20px;
     color: $font-color;
     opacity: 0.6;
+
+    &:hover {
+      color: #ffffff;
+      opacity: 1;
+    }
   }
 }

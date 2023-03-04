@@ -3,6 +3,7 @@ import getActiveLink from './asideNavigation';
 import getRefs from './get-refs';
 import renderMovieCards from './renderMovieCards';
 import createPagination from './pagination';
+import getMovieRaitingColor from './raitingColor';
 
 const refs = getRefs();
 const categoryMovie = new MovieApiService();
@@ -18,8 +19,9 @@ export function getTopDayMarkup() {
   refs.movieCardTitle.textContent = 'Топ дня';
   createPagination();
   categoryMovie.fetchTrendDayMovie().then(data => {
-    categoryMovie
-      .fetchGenreMovie()
-      .then(genres => renderMovieCards(data, genres));
+    categoryMovie.fetchGenreMovie().then(genres => {
+      renderMovieCards(data, genres);
+      getMovieRaitingColor();
+    });
   });
 }

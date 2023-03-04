@@ -1,5 +1,12 @@
 {{#each this}}
-  <li class='movie__item'>
+  <li
+    class='movie__item'
+    data-aos='fade-up'
+    data-aos-offset='200'
+    data-aos-delay='100'
+    data-aos-duration='1000'
+    data-aos-easing='ease-in-out'
+  >
     <img
       class='movie__img'
       data-id='{{id}}'
@@ -9,11 +16,18 @@
       loading='lazy'
     />
 
-    <p class='movie__rating movie__rating--great'>
+    <p class='movie__rating'>
       <span>{{vote_average}}</span>
     </p>
 
-    <div class='movie__description'>
+    <div
+      class='movie__description'
+      data-aos='zoom-in'
+      data-aos-delay='50'
+      data-aos-duration='1000'
+      data-aos-easing='ease-in-out'
+      data-aos-once='false'
+    >
       <p class='movie__title'>{{title}}</p>
       <p class='movie__card-info'>
         {{#each genre_ids}}
