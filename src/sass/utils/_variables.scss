@@ -6,6 +6,18 @@ $button-color: rgb(234, 95, 95);
 $border-color: rgb(128 129 145 / 24%);
 $card-bg: #252936;
 
+:root {
+  --theme-bg: #1f1d2b;
+  --font-color: #808191;
+  --button-bg: #353340;
+  --button-color: rgb(234, 95, 95);
+  --border-color: rgb(128 129 145 / 24%);
+  --card-bg: #252936;
+  --white: #ffffff;
+  --main-font: "Inter",
+    Arial,
+    sans-serif;
+}
 
 /* Размер шрифта */
 $main-font: "Inter",

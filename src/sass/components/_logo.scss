@@ -26,15 +26,15 @@
 }
 
 .logo__link {
-  color: #ffffff;
+  color: var(--white);
 }
 
 .logo__link--heart {
   font-size: 15px;
-  color: $button-color;
+  color: var(--button-color);
   ;
 }
 
 .logo:hover .logo__link--heart {
-  color: #ffffff;
+  color: var(--white);
 }

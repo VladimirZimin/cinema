@@ -14,9 +14,9 @@
 
 .form__input {
   width: 100%;
-  background-color: $button-bg;
-  font-family: $font-color;
-  color: #fff;
+  background-color: var(--button-bg);
+  font-family: var(--font-color);
+  color: var(--white);
   border: none;
   border-radius: 8px;
   padding: 0 10px;
@@ -38,11 +38,11 @@
   &--icon {
 
     font-size: 20px;
-    color: $font-color;
+    color: var(--font-color);
     opacity: 0.6;
 
     &:hover {
-      color: #ffffff;
+      color: var(--white);
       opacity: 1;
     }
   }

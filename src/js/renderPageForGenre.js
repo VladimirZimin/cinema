@@ -14,8 +14,6 @@ export default function onRenderPageForGenres(evt) {
   let pageName = '';
   let name = '';
 
-  console.log(evt.target.nodeName);
-
   if (evt.target.nodeName === 'A') {
     name = evt.target.textContent;
     pageName = name.slice(36, name.length);

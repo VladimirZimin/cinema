@@ -16,7 +16,7 @@ export function onRenderPageTopDay(evt) {
 }
 
 export function getTopDayMarkup() {
-  refs.movieCardTitle.textContent = 'Топ дня';
+  // refs.movieCardTitle.textContent = 'Топ дня';
   createPagination();
   categoryMovie.fetchTrendDayMovie().then(data => {
     categoryMovie.fetchGenreMovie().then(genres => {

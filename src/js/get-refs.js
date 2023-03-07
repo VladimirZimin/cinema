@@ -12,5 +12,10 @@ export default function getRefs() {
     asideLinkCurrent: document.querySelector('.aside__link--current'),
     pagination: document.querySelector('#pagination'),
     searchForm: document.querySelector('.form'),
+    langButtonUa: document.querySelector('.lang-button--ua'),
+    langButtonEn: document.querySelector('.lang-button--en'),
+    langButton: document.querySelector('.lang-button__item'),
+    themeItem: document.querySelector('.theme__item'),
+    themeBtn: document.querySelector('.lang-aside-theme'),
   };
 }

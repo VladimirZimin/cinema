@@ -36,8 +36,6 @@ function correctValue(data, genres) {
     //   ? (item.release_date = item.release_date.slice(0, 4))
     //   : (item.release_date = item.first_air_date.slice(0, 4));
 
-    console.log('item.release_date:', item.release_date);
-
     genres.concat(genreTV).map(genreId => {
       item.genre_ids.map((genre, index) => {
         if (genre === genreId.id) {

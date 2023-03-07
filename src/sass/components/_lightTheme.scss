@@ -1,0 +1,36 @@
+.light {
+  background-color: #eef0d4;
+  color: var(--font-color);
+
+  .menu-wrap,
+  .aside,
+  .header,
+  .tui-pagination,
+  .container,
+  .main-section {
+    background-color: #eef0d4;
+    color: var(--font-color);
+  }
+
+
+  input {
+    background-color: #c4cf8d;
+    color: var(--font-color);
+  }
+
+  .logo__link {
+    color: var(--font-color);
+
+    &:hover {
+      color: var(--button-color)
+    }
+  }
+
+  .aside__item--current {
+    color: #1f1d2b;
+  }
+
+  .movie__item {
+    background-color: #c4cf8d;
+  }
+}

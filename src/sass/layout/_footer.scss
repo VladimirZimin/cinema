@@ -24,14 +24,18 @@
 
 .footer__author {
   margin: 0;
+  margin-left: 3px;
   padding: 0;
 
-  & a {
-    color: inherit;
-  }
 
-  &:hover a {
-    color: $button-color;
-    opacity: 1;
-  }
+}
+
+a {
+  margin-left: 3px;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--button-color);
+  opacity: 1;
 }

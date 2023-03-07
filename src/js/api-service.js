@@ -7,6 +7,7 @@ export default class MovieApiService {
 
     this._searchQuery = '';
     this.page = 1;
+    this.lang = localStorage.getItem('lang'); //'en-US';
   }
 
   incrementPage() {
@@ -21,10 +22,17 @@ export default class MovieApiService {
     this._searchQuery = newQuery;
   }
 
+  // setLanguage() {
+  //   if (!localStorage.getItem('lang')) {
+  //     return (this.lang = 'en-US');
+  //   }
+  //   return (this.lang = localStorage.getItem('lang'));
+  // }
+
   fetchTrendDayMovie = async () => {
     try {
       const response = await axios.get(
-        `${this.BASE_URL}/trending/all/day?api_key=${this.API_KEY}&page=${this.page}`,
+        `${this.BASE_URL}/trending/all/day?api_key=${this.API_KEY}&page=${this.page}&language=${this.lang}`,
       );
 
       // this.incrementPage();
@@ -38,7 +46,7 @@ export default class MovieApiService {
   fetchTrendWeekMovie = async () => {
     try {
       const response = await axios.get(
-        `${this.BASE_URL}/trending/all/week?api_key=${this.API_KEY}&page=${this.page}`,
+        `${this.BASE_URL}/trending/all/week?api_key=${this.API_KEY}&page=${this.page}&language=${this.lang}`,
       );
 
       // this.incrementPage();
@@ -51,7 +59,7 @@ export default class MovieApiService {
 
   fetchGenreMovie = async () => {
     const response = await axios.get(
-      `${this.BASE_URL}/genre/movie/list?api_key=${this.API_KEY}`,
+      `${this.BASE_URL}/genre/movie/list?api_key=${this.API_KEY}&language=${this.lang}`,
     );
 
     return response.data.genres;
@@ -60,7 +68,7 @@ export default class MovieApiService {
   fetchMoviesForGenres = async id => {
     try {
       const responce = await axios.get(
-        `${this.BASE_URL}/discover/movie?with_genres=${id}&page=${this.page}&api_key=${this.API_KEY}`,
+        `${this.BASE_URL}/discover/movie?with_genres=${id}&page=${this.page}&api_key=${this.API_KEY}&language=${this.lang}`,
         // &with_original_language=en
       );
 
@@ -73,7 +81,7 @@ export default class MovieApiService {
   fetchSearchMovie = async () => {
     try {
       const responce = await axios.get(
-        `${this.BASE_URL}/search/movie?query=${this._searchQuery}&page=${this.page}&api_key=${this.API_KEY}`,
+        `${this.BASE_URL}/search/movie?query=${this._searchQuery}&page=${this.page}&api_key=${this.API_KEY}&language=${this.lang}`,
       );
 
       return responce.data.results;

@@ -10,7 +10,7 @@
 
 
   width: 100%;
-  background-color: $theme-bg;
+  background-color: var(--theme-bg);
   z-index: 111;
 
 
@@ -31,6 +31,26 @@
     overflow-x: hidden;
   }
 
+  .config__list {
+    margin-top: 50%;
+
+    .config__item {
+      margin-bottom: 23px;
+      margin-right: 15px;
+      text-align: center;
+    }
+
+    .theme {
+
+
+      span {
+        font-size: 16px
+      }
+
+      ;
+    }
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
@@ -45,10 +65,16 @@
   }
 
   &__item {
-
-
     .material-icons {
       display: none;
+    }
+
+    .material-theme-icons {
+      display: block;
+      position: absolute;
+      left: -18px;
+      font-size: 15px;
+      line-height: 1;
     }
   }
 
@@ -56,10 +82,11 @@
     display: block;
     width: 130px;
     padding: 10px 15px 10px 0;
-    color: $font-color;
+    color: var(--font-color);
+    cursor: pointer;
 
     &:hover {
-      color: #ffffff;
+      color: var(--white);
     }
   }
 }
@@ -82,7 +109,7 @@
 
 .aside__item--current {
   position: relative;
-  color: #ffffff;
+  color: var(--white);
   font-weight: 600;
   transform: translateX(-5px);
 
@@ -107,7 +134,7 @@
     left: -45px;
     width: 150px;
     height: 2px;
-    background-color: $border-color;
+    background-color: var(--border-color);
 
     @media screen and (min-width: 640px) {
       position: relative;
@@ -118,7 +145,7 @@
 }
 
 @media screen and (min-width: 640px) {
-  .theme__item {
+  .favorites__item {
     position: relative;
     margin-bottom: 40px;
     padding-bottom: 10px;
@@ -130,19 +157,19 @@
       left: -20px;
       width: 130px;
       height: 2px;
-      background-color: $border-color;
+      background-color: var(--border-color);
 
 
     }
   }
 }
 
-.aside-menu {
+// .aside-menu {
 
-  &__list {
-    margin-top: 50%;
-  }
-}
+//   &__list {
+//     margin-top: 50%;
+//   }
+// }
 
 @media screen and (min-width: 640px) {
 
@@ -151,5 +178,40 @@
     display: none;
     padding: 0;
     margin: 0;
+  }
+}
+
+.lang-button {
+  margin-left: -60px;
+
+  & button {
+    width: 34px;
+    height: 22px;
+    background-color: var(--button-bg);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: var(--font-color);
+    cursor: pointer;
+  }
+
+  & .lang-button--light,
+  & .lang-button--dark {
+    width: 50px;
+  }
+
+  .lang-button--en,
+  .lang-button--dark {
+    margin-left: 7px;
+  }
+
+  .lang-button__is-active {
+    background-color: var(--white);
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .lang-button {
+    margin-left: 0;
   }
 }

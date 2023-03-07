@@ -8,10 +8,10 @@
   font-size: 14px;
   font-weight: 500;
   text-align: center;
-  background-color: #ea5f5f;
+  background-color: var(--button-color);
   border: 0;
   border-radius: 5px;
-  color: #fff;
+  color: var(--white);
   cursor: pointer;
 
   @media screen and (min-width: 640px) {
