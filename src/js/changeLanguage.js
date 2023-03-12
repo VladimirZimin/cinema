@@ -24,10 +24,12 @@ export function getStyleCurrentLangBtn() {
     hash = 'ua';
     refs.langButtonUa.classList.add('lang-button__is-active');
     refs.langButtonEn.classList.remove('lang-button__is-active');
+    document.querySelector('.form__input').placeholder = 'Пошук';
   } else {
     hash = 'en';
     refs.langButtonEn.classList.add('lang-button__is-active');
     refs.langButtonUa.classList.remove('lang-button__is-active');
+    document.querySelector('.form__input').placeholder = 'Search';
   }
 
   for (let key in langValue) {

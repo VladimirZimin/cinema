@@ -30,15 +30,14 @@
   background-color: var(--card-bg);
   border-radius: 15px;
   overflow: hidden;
-  cursor: pointer;
-  z-index: 999;
+  z-index: 1; /// 999
 
 
   & img {
     display: block;
     object-fit: cover;
     transition: all 0.3s;
-
+    cursor: pointer;
   }
 
   &:hover img {

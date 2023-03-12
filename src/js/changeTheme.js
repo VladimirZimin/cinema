@@ -2,27 +2,28 @@ import getRefs from './get-refs';
 
 const refs = getRefs();
 
-export default function onClickChangeTheme(evt) {
+export function onClickChangeTheme(evt) {
   evt.preventDefault();
 
-  refs.themeBtn.classList.toggle('light');
-  console.log(evt.target);
-
-  if (refs.themeBtn.classList.contains('light')) {
-    localStorage.setItem('theme', 'light');
-  } else {
+  if (refs.body.classList.contains('light')) {
     localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
   }
+
+  refs.hamburgerButton.classList.remove('is-active');
+  refs.movieList.style.display = 'grid';
+  refs.aside.classList.add('is-hidden');
 
   addDarkClassToHTML();
 }
 
-function addDarkClassToHTML() {
+export function addDarkClassToHTML() {
   if (localStorage.getItem('theme') === 'light') {
-    document.querySelector('body').classList.add('light');
+    refs.body.classList.add('light');
     document.querySelector('.config__link span').textContent = 'light_mode';
   } else {
-    document.querySelector('body').classList.remove('light');
+    refs.body.classList.remove('light');
     document.querySelector('.config__link span').textContent = 'dark_mode';
   }
 }

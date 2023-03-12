@@ -81,10 +81,34 @@ export default class MovieApiService {
   fetchSearchMovie = async () => {
     try {
       const responce = await axios.get(
-        `${this.BASE_URL}/search/movie?query=${this._searchQuery}&page=${this.page}&api_key=${this.API_KEY}&language=${this.lang}`,
+        `${this.BASE_URL}/search/movie?query=${this._searchQuery}&api_key=${this.API_KEY}&language=${this.lang}`,
       );
 
       return responce.data.results;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  fetchSearchMovieById = async id => {
+    try {
+      const responce = await axios.get(
+        `${this.BASE_URL}/movie/${id}?&api_key=${this.API_KEY}&language=${this.lang}`,
+      );
+
+      return responce.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  fetchTrailersOfMovie = async id => {
+    try {
+      const responce = await axios.get(
+        `https://imdb-api.com/en/API/Trailer/k_mlq541ll/${id}`,
+      );
+
+      return responce;
     } catch (error) {
       console.log(error);
     }

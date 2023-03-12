@@ -1,7 +1,9 @@
 export default function getRefs() {
   return {
+    body: document.querySelector('body'),
     hamburgerButton: document.querySelector('.hamburger-js'),
     movieList: document.querySelector('.movie__list'),
+    movieItem: document.querySelector('.movie__item'),
     topWeek: document.querySelector('[data-name="topWeek"]'),
     topDay: document.querySelector('[data-name="topDay"]'),
     movieCardTitle: document.querySelector('.movie-cards__title'),
@@ -17,5 +19,6 @@ export default function getRefs() {
     langButton: document.querySelector('.lang-button__item'),
     themeItem: document.querySelector('.theme__item'),
     themeBtn: document.querySelector('.lang-aside-theme'),
+    trailerLink: document.querySelector('.modal__trailer-link'),
   };
 }

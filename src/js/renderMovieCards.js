@@ -1,3 +1,4 @@
+import showCardInfo from './renderMovieCardsInfo';
 import getRefs from './get-refs';
 import templatesCard from '../templates/templatesCard.hbs';
 
@@ -17,6 +18,8 @@ export default function renderMovieCards(data, genres) {
   correctValue(data, genres);
 
   refs.movieList.insertAdjacentHTML('beforeend', templatesCard(data));
+
+  refs.movieList.addEventListener('click', showCardInfo);
 }
 
 function correctValue(data, genres) {

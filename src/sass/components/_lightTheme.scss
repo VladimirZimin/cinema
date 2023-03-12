@@ -7,7 +7,10 @@
   .header,
   .tui-pagination,
   .container,
-  .main-section {
+  .main-section,
+  .modal,
+  .specifications-items__text,
+  .modal__about-title {
     background-color: #eef0d4;
     color: var(--font-color);
   }

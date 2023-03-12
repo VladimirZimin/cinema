@@ -1,0 +1,66 @@
+<div class='modal'>
+
+  <div class='modal__content'>
+    <img alt='preview-film' class='modal__preview-image' src='https://image.tmdb.org/t/p/w500/{{poster_path}}' />
+
+    <div class='modal__text-content'>
+
+      <h2 class='modal__film-title'>{{title}}</h2>
+
+      <div class='modal__specifications specifications'>
+        <p class='specifications'>
+          <span class='specifications-items__text lang-vote'>Оцінка/Голосів:</span>
+          <span class='specifications-values__text'>
+            <span class='specifications-values__text--vote'>{{vote_average}}</span>
+            <span class='specifications-values__text--slash'>/</span>
+            <span class='specifications-values__text--votes'>{{vote_count}}</span>
+          </span>
+        </p>
+
+        <p class='specifications'>
+          <span class='specifications-items__text lang-popularity'>Популярність:</span>
+          <span class='specifications-values__text popularity'>{{popularity}}</span>
+        </p>
+
+        <p class='specifications'>
+          <span class='specifications-items__text lang-originalTitle'>Оригінальна назва:</span>
+          <span class='specifications-values__text title'>{{original_title}}</span>
+        </p>
+
+        <p class='specifications'>
+          <span class='specifications-items__text lang-genre'>Жанр:</span>
+          {{#each genres}}
+          <span class='specifications-values__text genre'>{{name}}
+          </span><span class='movie__card-info--span'>,</span>
+          {{/each}}
+        </p>
+      </div>
+
+      <h3 class='modal__about-title lang-aboutFilm'>Про фільм:</h3>
+
+      <p class='modal__about-text'>{{overview}}</p>
+
+      <div class="button__wrap">
+        <p class='modal__trailer'>
+          <a class='modal__trailer-link lang-trailer' href=''>Трейлер
+          </a>
+        </p>
+
+
+        <button type='button' class='btn-add'>
+          <p class='modal-btn_text lang-favorites'>В обране</p>
+        </button>
+      </div>
+
+         <p class='modal__info-not-login-user lang-alert'>Будь-ласка, увійдіть в систему, щоб
+      додати фільм до бібліотеки.</p>
+    </div>
+
+ 
+
+  </div>
+</div>
+<a class='modal__close-btn'><span class='material-icons'>
+    cancel
+  </span></a>
+</div>

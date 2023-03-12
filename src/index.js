@@ -1,19 +1,18 @@
 import MovieApiService from './js/api-service';
-import Pagination from 'tui-pagination';
 import onClickHamburgerButton from './js/hamburger';
 import getRefs from './js/get-refs';
-import renderMovieCards from './js/renderMovieCards';
 import { onRenderPageTopDay, getTopDayMarkup } from './js/renderPageTopDay';
 import onRenderPageTopWeek from './js/renderPageTopWeek';
-import onPaginationClick from './js/pagination';
 import { onClickAsideLinkButton, renderAsideMenuList } from './js/asideMenu';
 import onRenderPageForGenres from './js/renderPageForGenre';
 import renderPagaSearchMovie from './js/renderPageSearchMovie';
 import { onClickChangeLang, getStyleCurrentLangBtn } from './js/changeLanguage';
 import titleCard from './js/titleCard';
-import Darkmode from 'darkmode-js';
-import onClickChangeTheme from './js/changeTheme';
+import { addDarkClassToHTML, onClickChangeTheme } from './js/changeTheme';
+import showCardInfo from './js/renderMovieCardsInfo';
+import { authUser } from './js/firebase';
 import AOS from 'aos';
+import './js/playlist';
 import 'aos/dist/aos.css';
 import './sass/main.scss';
 
@@ -26,6 +25,8 @@ const categoryMovie = new MovieApiService();
 console.log(categoryMovie.fetchTrendDayMovie());
 console.log(categoryMovie.fetchTrendWeekMovie());
 console.log(categoryMovie.fetchGenreMovie());
+console.log(categoryMovie.fetchSearchMovie());
+
 console.log('lang:', categoryMovie.lang);
 
 ///////////////// renderAsideMenuList //////////////////////////////////////
@@ -54,7 +55,9 @@ getTopDayMarkup();
 //     .then(genres => renderMovieCards(data, genres));
 // });
 
-///////////////// Raiting //////////////////////////////////////
+///////////////// Theme //////////////////////////////////////
+
+addDarkClassToHTML();
 
 ///////////////// Listener //////////////////////////////////////
 
@@ -73,3 +76,7 @@ refs.themeBtn.addEventListener('click', onClickChangeTheme);
 getStyleCurrentLangBtn();
 
 AOS.init();
+
+// showCardInfo();
+
+authUser();
